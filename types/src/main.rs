@@ -16,4 +16,8 @@ fn main() {
 
     //? Boolean Types
     let _boolean: bool = true;
+
+    //? Char Types
+    // Note that we specify char literals with single quotes, as opposed to string literals, which use double quotes. Rust’s char type is four bytes in size and represents a Unicode Scalar Value
+    let _character: char = 'C';
 }
