@@ -13,4 +13,7 @@ fn main() {
     // float types default to f64 (Because on modern CPUs, it’s roughly the same speed as f32 but is capable of more precision)
     // All floating-point types are signed
     let _float: f32 = 1.0;
+
+    //? Boolean Types
+    let _boolean: bool = true;
 }
