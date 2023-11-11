@@ -29,4 +29,15 @@ fn main() {
     let _five_hundred = tup.0;
     let _six_point_four = tup.1;
     let _one = tup.2;
+
+    //? Array Type
+    // Unlike arrays in other languages, in rust the arrays will have fixed length and contains only one type
+    let _array = [1, 2, 3, 4, 5];
+    // You can use `vector`, which is allowed to grow and shrink in size, but array can be very useful for constants like names of the months
+    let _months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+    // Other useful type specifications
+    let _array_example: [i32; 5] = [1, 2, 3, 4, 5];
+
+    
 }
