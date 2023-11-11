@@ -20,4 +20,13 @@ fn main() {
     //? Char Types
     // Note that we specify char literals with single quotes, as opposed to string literals, which use double quotes. Rust’s char type is four bytes in size and represents a Unicode Scalar Value
     let _character: char = 'C';
+
+    //? Tuple Type
+    // Tuples have fixed length and can have multiple types
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    // Tuple descructuring
+    let (_x, _y, _z) = tup;
+    let _five_hundred = tup.0;
+    let _six_point_four = tup.1;
+    let _one = tup.2;
 }
