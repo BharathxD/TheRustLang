@@ -29,7 +29,7 @@ fn fibonacci() {
     }
 }
 
-fn countdown() {
+fn _countdown() {
     let mut countdown_from = String::new();
     std::io::stdin().read_line(&mut countdown_from).expect("Error reading the input");
     let countdown_from: i32 = countdown_from.trim().parse().expect("Invalid type");
