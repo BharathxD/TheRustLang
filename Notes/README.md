@@ -9,3 +9,5 @@
         let b = a;
     }
     ```
+
+- References are non-owning pointers, because they do not own the data they point to.
