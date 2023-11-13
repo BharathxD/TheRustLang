@@ -14,3 +14,4 @@
 - Pointer Safety Principle: data should never be aliased and mutated at the same time.
 - Box deallocation principle: If a variable owns a box, when Rust deallocates the variable's frame, then Rust deallocates the box's heap memory.
 - Moved heap data principle: if a variable x moves ownership of heap data to another variable y, then x cannot be used after the move.
+- References provide the ability to read and write data without consuming ownership of it. References are created with borrows (& and &mut) and used with dereferences (*), often implicitly.
