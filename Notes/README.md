@@ -18,3 +18,4 @@
 - Pointer Safety Principle: data should never be aliased and mutated at the same time.
 - References provide the ability to read and write data without consuming ownership of it. References are created with borrows (& and &mut) and used with dereferences (*), often implicitly.
 - All variables can read, own, and (optionally) write their data.
+- Creating a reference will transfer permissions from the borrowed path to the reference.
