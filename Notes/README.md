@@ -23,3 +23,4 @@
 - Data must outlive all references that point to it.
 - It is very rare for Rust functions to take ownership of heap-owning data structures like Vec and String.
 - Heap data can only be accessed through its current owner, not a previous owner.
+- Rust deallocates heap data once its owner goes out of scope.
