@@ -27,3 +27,4 @@
 - Slices are a special kind of reference that refer to sub-ranges of a sequence, like a string or a vector.
 - At runtime, a slice is represented as a "fat pointer" which contains a pointer to the beginning of the range and a length of the range.
 - One advantage of slices over index-based ranges is that the slice cannot be invalidated while it's being used.
+- The original invention of ownership types wasn't about memory safety at all. It was about preventing leaks of mutable references to data structure internals in Java-like languages. (Not a key point but good to know).
