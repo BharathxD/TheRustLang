@@ -26,3 +26,4 @@
 - Rust deallocates heap data once its owner goes out of scope.
 - Slices are a special kind of reference that refer to sub-ranges of a sequence, like a string or a vector.
 - At runtime, a slice is represented as a "fat pointer" which contains a pointer to the beginning of the range and a length of the range.
+- One advantage of slices over index-based ranges is that the slice cannot be invalidated while it's being used.
