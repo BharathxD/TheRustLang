@@ -29,6 +29,7 @@
 - One advantage of slices over index-based ranges is that the slice cannot be invalidated while it's being used.
 - The original invention of ownership types wasn't about memory safety at all. It was about preventing leaks of mutable references to data structure internals in Java-like languages. (Not a key point but good to know).
 - A string slice is a reference to part of a String
+
     ```rs
     fn main() {
         let s = String::from("hello world");
@@ -37,4 +38,13 @@
         let world: &str = &s[6..11];
         let s2: &String = &s; 
         }
+    ```
+
+- With Rust’s `..` range syntax, if you want to start at index zero, you can drop the value before the two periods. In other words, these are equal:
+
+    ```rs
+    let s = String::from("hello");
+
+    let slice = &s[0..2];
+    let slice = &s[..2];
     ```
