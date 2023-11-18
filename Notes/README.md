@@ -48,3 +48,15 @@
     let slice = &s[0..2];
     let slice = &s[..2];
     ```
+
+- String slice range indices must occur at valid UTF-8 character boundaries. If you attempt to create a string slice in the middle of a multibyte character, your program will exit with an error.
+
+    ```rs
+    let s = String::from("hello");
+
+    let len = s.len();
+
+    // Both are the same
+    let slice = &s[3..len];
+    let slice = &s[3..];
+    ```
