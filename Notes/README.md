@@ -60,3 +60,5 @@
     let slice = &s[3..len];
     let slice = &s[3..];
     ```
+
+- If we have a string slice, we can pass that directly. If we have a String, we can pass a slice of the String or a reference to the String. This flexibility takes advantage of deref coercions.
