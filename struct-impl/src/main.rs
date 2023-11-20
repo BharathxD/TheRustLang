@@ -1,6 +1,12 @@
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
+}
+
+struct User {
+    name: String,
+    email: String
 }
 
 impl Rectangle {
@@ -13,6 +19,16 @@ fn main() {
     let rectangle = Rectangle {
         width: 30,
         height: 50,
+    };
+
+    let user1 = User {
+        name: String::from("Bharath"),
+        email: String::from("Bharath@vertocity.com")
+    };
+
+    let user2: User = User {
+        name: String::from("Lakshman"),
+        ..user1
     };
 
     println!(
