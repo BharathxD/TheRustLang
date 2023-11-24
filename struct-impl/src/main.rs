@@ -6,7 +6,7 @@ struct Rectangle {
 
 struct User {
     name: String,
-    email: String
+    email: String,
 }
 
 impl Rectangle {
@@ -14,6 +14,13 @@ impl Rectangle {
         self.width * self.height
     }
 }
+
+impl Rectangle {
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
 
 fn main() {
     let rectangle = Rectangle {
@@ -23,7 +30,7 @@ fn main() {
 
     let user1 = User {
         name: String::from("Bharath"),
-        email: String::from("Bharath@vertocity.com")
+        email: String::from("Bharath@vertocity.com"),
     };
 
     let user2: User = User {
