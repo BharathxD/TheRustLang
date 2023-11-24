@@ -66,3 +66,16 @@
 - Structs let you create custom types that are meaningful for your domain. By using structs, you can keep associated pieces of data connected to each other and name each piece to make your code clear. (But structs aren’t the only way you can create custom types: let’s turn to Rust’s enum feature to add another tool to your toolbox.)
 - In impl blocks, you can define functions that are associated with your type, and methods are a kind of associated function that let you specify the behavior that instances of your structs have.
 - Rust does not have a keyword for constructor functions. The idiomatic way to define a constructor function is to make an associated function called new, but that is not enforced by the language.
+- Methods can only be implemented for types (e.g. impl Point), not variables (like p).
+
+    ```rs
+    struct Point(i32, i32);
+    fn main() {
+    let p = Point(1, 2);
+    impl p {
+        fn x(&self) -> i32 { self.0 }
+    }
+    
+    println!("{}", p.x());
+    }
+    ```
