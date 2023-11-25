@@ -79,3 +79,5 @@
     println!("{}", p.x());
     }
     ```
+
+- Rust will “push down” the reference from the outer enum, &Option<String>, to the inner field, &String. Therefore s has type &String, and opt can be used after the match
