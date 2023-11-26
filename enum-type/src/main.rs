@@ -9,5 +9,8 @@ struct IpAddr {
 }
 
 fn main() {
-    let ip = IpAddrKind::V4;
+    let home = IpAddr {
+        kind: IpAddrKind::V4,
+        address: String::from("127.0.0.1"),
+    };   
 }
