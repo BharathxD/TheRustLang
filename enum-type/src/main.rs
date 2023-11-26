@@ -3,6 +3,11 @@ enum IpAddrKind {
     V6,
 }
 
+struct IpAddr {
+    kind: IpAddrKind,
+    address: String,
+}
+
 fn main() {
-    let ip = IpAddrKind::V4;   
+    let ip = IpAddrKind::V4;
 }
