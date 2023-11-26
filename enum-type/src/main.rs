@@ -4,5 +4,5 @@ enum IpAddrKind {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let ip = IpAddrKind::V4;   
 }
