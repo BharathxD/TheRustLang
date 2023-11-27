@@ -39,7 +39,7 @@ fn main() {
     // Other useful type specifications
     let array_example: [i32; 5] = [1, 2, 3, 4, 5];
     // You can also initialize an array to contain the same value for each element by specifying the initial value, followed by a semicolon, and then the length of the array in square brackets, as shown here:
-    let _array_with_same_value = [2; 5];
+    let _array_with_same_value: [i32; 5] = [2; 5];
     // Accessing array elements
     let _first_el = array_example[0];
     let _second_el = array_example[1];
