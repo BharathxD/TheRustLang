@@ -5,9 +5,9 @@ fn main() {
     // integer types default to i32
     let _integer: u32 = 20;
     // We can also specy the type at the end of integer
-    let _integer: u32 = 40u8;
+    let _integer = 40u8;
     // Complier ignores `_`
-    let _integer: u32 = 40_u8;
+    let _integer = 40_u8;
 
     //? Floating point types
     // float types default to f64 (Because on modern CPUs, it’s roughly the same speed as f32 but is capable of more precision)
