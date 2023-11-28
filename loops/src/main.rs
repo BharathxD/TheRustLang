@@ -18,7 +18,6 @@ fn fibonacci() {
     // Initialize Fibonacci sequence variables
     let mut t1 = 0i32;
     let mut t2 = 1i32;
-    let mut next_val = 0;
     let mut i = 1i32;
 
     // Calculate and print the Fibonacci sequence
@@ -27,7 +26,7 @@ fn fibonacci() {
             1 => println!("0"),
             2 => println!("1"),
             _ => {
-                next_val = t1 + t2;
+                let next_val = t1 + t2;
                 t1 = t2;
                 t2 = next_val;
                 println!("{}", next_val);
