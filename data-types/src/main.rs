@@ -43,4 +43,10 @@ fn main() {
     // Accessing array elements
     let _first_el: i32 = array_example[0];
     let _second_el: i32 = array_example[1];
+
+
+    // MAX
+    println!("Max U32: {}", u32::MAX);
+    println!("Max U64: {}", u64::MAX);
+    println!("Max USIZE: {}", usize::MAX);
 }
