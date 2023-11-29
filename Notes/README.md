@@ -1,3 +1,5 @@
+# Rust Keypoints from the rust book
+
 - Shadowing is different from marking a variable as `mut` because we’ll get a compile-time error if we accidentally try to reassign to this variable without using the `let` keyword. By using `let`, we can perform a few transformations on a value but have the variable be immutable after those transformations have been completed.
 - We can do type coercion with `let`, but with `mut`, we will get a compile-time error
 - Rust is a statically typed language, which means that it must know the types of all variables at compile time. The compiler can usually infer what type we want to use based on the value and how we use it.
