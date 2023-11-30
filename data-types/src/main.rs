@@ -4,9 +4,9 @@ fn main() {
     // Unsigned - u8, u16, u32, u64, u128, uarch (Range: 0 to 2^n-1)
     // integer types default to i32
     let _integer: u32 = 20;
-    // We can also specy the type at the end of integer
+    // We can also specify the type at the end of integer
     let _integer = 40u8;
-    // Complier ignores `_`
+    // Compiler ignores `_`
     let _integer = 40_u8;
 
     //? Floating point types
@@ -24,16 +24,16 @@ fn main() {
     //? Tuple Type
     // Tuples have fixed length and can have multiple types
     let tup: (i32, f64, u8) = (500, 6.4, 1);
-    // Tuple descructuring
+    // Tuple destructuring
     let (_x, _y, _z): (i32, f64, u8) = tup;
     let _five_hundred = tup.0;
     let _six_point_four = tup.1;
     let _one = tup.2;
 
     //? Array Type
-    // Unlike arrays in other languages, in rust the arrays will have fixed length and contains only one type
+    // Unlike arrays in other languages, in Rust the arrays will have fixed length and contain only one type
     let _array = [1, 2, 3, 4, 5];
-    // You can use `vector`, which is allowed to grow and shrink in size, but array can be very useful for constants like names of the months
+    // You can use `vector`, which is allowed to grow and shrink in size, but arrays can be very useful for constants like names of the months
     let _months: [&str; 12]  = ["January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December"];
     // Other useful type specifications
