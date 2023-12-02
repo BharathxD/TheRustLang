@@ -85,3 +85,4 @@
 - Rust will “push down” the reference from the outer enum, &Option<String>, to the inner field, &String. Therefore s has type &String, and opt can be used after the match
 - Given a list of integers, use a vector and return the median (when sorted, the value in the middle position) and mode (the value that occurs most often; a hash map will be helpful here) of the list.
 - Vectors, strings, and hash maps will provide a large amount of functionality necessary in programs when you need to store, access, and modify data.
+- Rust lets you split a package into multiple crates and a crate into modules so you can refer to items defined in one module from another module. You can do this by specifying absolute or relative paths. These paths can be brought into scope with a use statement so you can use a shorter path for multiple uses of the item in that scope. Module code is private by default, but you can make definitions public by adding the pub keyword.
