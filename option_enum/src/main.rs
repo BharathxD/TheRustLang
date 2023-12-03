@@ -4,11 +4,19 @@
 //     None
 // }
 
+#[derive(Debug)]
+enum UsState {
+    Alaska,
+    Nebraska,
+    Ohio,
+    Massachussets,
+}
+
 enum Coin {
-    Penny,
+    Penny(UsState),
     Nickel,
     Dime,
-    Quarter
+    Quarter,
 }
 
 fn main() {
@@ -18,6 +26,8 @@ fn main() {
     let sum = x + y.unwrap_or(0);
 
     println!("{}", &sum);
+
+    value_in_cents(Coin::Penny(UsState::Massachussets));
 }
 
 fn _syntax() {
@@ -29,7 +39,10 @@ fn _syntax() {
 
 fn value_in_cents(coin: Coin) -> u8 {
     return match coin {
-        Coin::Penny => 1,
+        Coin::Penny(state) => {
+            println!("{:?}", state);
+            1
+        }
         Coin::Nickel => 5,
         Coin::Dime => 10,
         Coin::Quarter => 25,
