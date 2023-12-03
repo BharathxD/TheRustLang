@@ -14,15 +14,27 @@ mod tests {
 }
 
 mod front_of_house {
-    mod hosting {
-        fn add_to_waitlist() {}
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
     }
 }
 
 pub fn eat_at_restaurant() {
     // Absolute Path
-    crate::front_of_house::hosting::add_to_waitlist()
+    crate::front_of_house::hosting::add_to_waitlist();
 
     // Relative Path
-    front_of_house::hosting::add_to_waitlist()
+    front_of_house::hosting::add_to_waitlist();
+}
+
+fn serve_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        // Use super to access the functions in the parent module
+        super::serve_order();
+    }
+
+    fn cook_order() {}
 }
