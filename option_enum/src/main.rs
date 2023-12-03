@@ -51,7 +51,22 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
-        None => None,
         Some(i) => Some(i + 1),
+        _ => None,
+    }
+}
+
+fn if_let() {
+    let some_value: Option<i32> = Some(5);
+
+    // Conditional statement using match
+    match some_value {
+        Some(5) => println!("Five!"),
+        _ => (),
+    }
+
+    // Simpler Approach using if let
+    if let Some(5) = some_value {
+        println!("Five!");
     }
 }
