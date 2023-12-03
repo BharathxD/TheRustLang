@@ -1,8 +1,5 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
-    }
-}
+// Modules specified in the separate files
+mod front_of_house;
 
 // Absolute Path
 // use crate::front_of_house::hosting;
