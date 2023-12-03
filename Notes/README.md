@@ -101,3 +101,24 @@
             Ok(())
         }
     ```
+
+- We can export modules all at once using the following syntax:
+
+    ```rs
+        // Before
+        use rand::CryptoRng;
+        use rand::ErrorKind::Transient;
+        use rand::Rng;
+
+        // After
+        use rand::{CryptoRng, ErrorKind::Transient, Rng};
+    ```
+
+    ```rs
+        // Before
+        use std::io;
+        use std::io::Write;
+
+        // After
+        use std::io::{self, Write};
+    ```

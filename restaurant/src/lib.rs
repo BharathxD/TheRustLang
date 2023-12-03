@@ -8,7 +8,8 @@ mod front_of_house {
 // use crate::front_of_house::hosting;
 
 // Relative Path
-use self::front_of_house::hosting;
+// `pub`` brings the hosting module into scope within the program and also allows importing it in external files
+pub use self::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
     // Absolute Path
