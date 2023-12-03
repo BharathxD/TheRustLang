@@ -87,3 +87,17 @@
 - Vectors, strings, and hash maps will provide a large amount of functionality necessary in programs when you need to store, access, and modify data.
 - Rust lets you split a package into multiple crates and a crate into modules so you can refer to items defined in one module from another module. You can do this by specifying absolute or relative paths. These paths can be brought into scope with a use statement so you can use a shorter path for multiple uses of the item in that scope. Module code is private by default, but you can make definitions public by adding the pub keyword.
 - When the vector gets dropped, all of its contents are also dropped, meaning the integers it holds will be cleaned up. The borrow checker ensures that any references to contents of a vector are only used while the vector itself is valid.
+- Use `as` keyword to rename a conflicting import like:
+
+    ```rs
+        use std::fmt::Result;
+        use std::io::Result as IoResult;
+        fn function1() -> Result {
+            // --snip--
+            Ok(())
+        }
+        fn function2() -> IoResult {
+            // --snip--
+            Ok(())
+        }
+    ```
