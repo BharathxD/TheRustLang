@@ -5,8 +5,17 @@
 // }
 
 fn main() {
-    let some_number: Option<i32> = Some(1);
-    let some_string: Option<&str> = Some("Hello, world!");
+    let x: i8 = 1;
+    let y: Option<i8> = Some(1);
 
-    let none: Option<i32> = None;
+    let sum = x + y.unwrap_or(0);
+
+    println!("{}", &sum);
+}
+
+fn _syntax() {
+    let _some_number: Option<i32> = Some(1);
+    let _some_string: Option<&str> = Some("Hello, world!");
+
+    let _none: Option<i32> = None;
 }
