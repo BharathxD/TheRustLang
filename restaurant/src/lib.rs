@@ -1,23 +1,14 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
-
 mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {}
     }
 }
+
+// Absolute Path
+// use crate::front_of_house::hosting;
+
+// Relative Path
+use self::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
     // Absolute Path
@@ -29,14 +20,37 @@ pub fn eat_at_restaurant() {
     let mut breakfast_meal = back_of_house::Breakfast::summer("Rye");
 
     breakfast_meal.toast = String::from("Bread");
+
+    let _appetizer = back_of_house::Appetizer::Soup;
+
+    // There is a better way to do this!
+    // front_of_house::hosting::add_to_waitlist();
+    // front_of_house::hosting::add_to_waitlist();
+    // front_of_house::hosting::add_to_waitlist();
+
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
 }
 
-fn serve_order() {}
+fn _serve_order() {}
+
+mod start_of_hosue {
+    pub mod hosting {
+        pub fn _add_to_waitlist() {}
+    }
+}
 
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
         seasonal_fruit: String,
+    }
+
+    // By default if you mark enums public, then it will make all the variants public
+    pub enum Appetizer {
+        Soup,
+        Salad,
     }
 
     impl Breakfast {
@@ -48,11 +62,11 @@ mod back_of_house {
         }
     }
 
-    fn fix_incorrect_order() {
+    fn cook_order() {}
+
+    fn _fix_incorrect_order() {
         cook_order();
         // Use super to access the functions in the parent module
-        super::serve_order();
+        super::_serve_order();
     }
-
-    fn cook_order() {}
 }
