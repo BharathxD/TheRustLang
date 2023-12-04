@@ -48,7 +48,6 @@ mod back_of_house {
     // By default if you mark enums public, then it will make all the variants public
     pub enum Appetizer {
         Soup,
-        Salad,
     }
 
     impl Breakfast {
@@ -60,10 +59,7 @@ mod back_of_house {
         }
     }
 
-    fn cook_order() {}
-
     fn _fix_incorrect_order() {
-        cook_order();
         // Use super to access the functions in the parent module
         super::_serve_order();
     }
