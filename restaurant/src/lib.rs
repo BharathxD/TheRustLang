@@ -42,7 +42,8 @@ mod start_of_hosue {
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
-        seasonal_fruit: String,
+        pub seasonal_fruit: String,
+        // beverages: String,
     }
 
     // By default if you mark enums public, then it will make all the variants public
