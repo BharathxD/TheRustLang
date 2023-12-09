@@ -55,3 +55,29 @@ fn vec() {
         _ => println!("Not an Integer"),
     }
 }
+
+fn strings() {
+    // Strings are stored as a collection of UTF-8 encode bytes
+    let string_1: String = String::new();
+    let string_2: &str = "Initial Contents";
+    let string_3: String = string_2.to_string();
+    let string_4: String = String::from("Initial Contents");
+
+    let mut foo_bar: String = String::from("Foo ");
+    // Takes in &str / string slice
+    foo_bar.push_str("Bar");
+    // Takes in char
+    foo_bar.push('!');
+
+    let hello = String::from("Hello, ");
+    let world = String::from("World!");
+    // One Way
+    let hello_world_1 = hello + &world;
+    // Another Way
+    // let hello_world_2 = format!("{}{}", hello, world);
+
+    // It doesn't work
+    // let c: char = hello[0];
+
+    // What will work then?
+}
