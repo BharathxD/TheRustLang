@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
     // Normal array data type
     let _a: [i32; 4] = [1, 2, 3, 4];
@@ -80,4 +82,49 @@ fn strings() {
     // let c: char = hello[0];
 
     // What will work then?
+}
+
+fn h_maps() {
+    let team_1: String = String::from("Mumbai Indians");
+    let team_2: String = String::from("Hyderabad");
+
+    let mut hash_map: HashMap<String, i32> = HashMap::new();
+
+    hash_map.insert(team_1, 10);
+    hash_map.insert(team_2, 14);
+
+    let val: Option<&i32> = hash_map.get(&String::from("Hyderabad"));
+
+    match val {
+        Some(14) => println!("It is what they scored"),
+        None => println!("Didn't they score something?"),
+        _ => println!("They ain't gonna score nothing"),
+    }
+
+    // Extrac Key & Valkue (KV) from the hash map
+    for (key, val) in &hash_map {
+        println!("{} - {}", key, val);
+    }
+
+    hash_map.insert(String::from("Hyderabad"), 15);
+
+    // If entry is found then fetch it, or insert the new value with that as the key and default value
+    hash_map
+        .entry(String::from("Rajasthan Royals"))
+        .or_insert(6);
+}
+
+fn problem() {
+    let quote = "Hello world wonderful world";
+
+    let mut hash_map: HashMap<&str, i32> = HashMap::new();
+
+    let quote_arr = quote.split_whitespace();
+
+    for word in quote_arr {
+        let count = hash_map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{:?}", hash_map);
 }
