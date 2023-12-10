@@ -32,4 +32,10 @@ fn handle_grace() {
             }
         },
     };
+
+    // Another way to do this
+    let f: File = File::open("hello.txt").expect("Failed to open 'hello.txt'");
+
+    // We can also use unwrap
+    let f: File = File::open("hello.txt").unwrap();
 }
