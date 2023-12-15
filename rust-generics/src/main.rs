@@ -4,9 +4,29 @@ fn main() {
     enum_example();
 }
 
-impl<U> Point<U> {
+struct Point<T, U> {
+    x: T,
+    y: U,
+}
+
+impl<U, K> Point<U, K> {
     fn x(&self) -> &U {
         &self.x
+    }
+}
+
+impl Point<f64, f64> {
+    fn y(&self) -> &f64 {
+        &self.y
+    }
+}
+
+impl<T, U> Point<T, U> {
+    fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
+        Point {
+            x: self.x,
+            y: other.y,
+        }
     }
 }
 
@@ -19,11 +39,6 @@ fn enum_example() {
         Ok(T),
         Err(E),
     }
-}
-
-struct Point<T> {
-    x: T,
-    y: T,
 }
 
 fn struct_generic_example() {
