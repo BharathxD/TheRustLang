@@ -4,6 +4,12 @@ fn main() {
     enum_example();
 }
 
+impl<U> Point<U> {
+    fn x(&self) -> &U {
+        &self.x
+    }
+}
+
 fn enum_example() {
     enum Options<T> {
         Some(T),
