@@ -53,6 +53,7 @@ mod tests {
         assert_eq!(add(1, 2), 3);
     }
 
+    #[test]
     #[should_panic(expected = "assertion failed")]
     fn should_panic() {
         assert!(false, "assertion failed");
