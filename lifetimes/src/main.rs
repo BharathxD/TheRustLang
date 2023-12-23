@@ -1,26 +1,25 @@
+// Entry point of the program
 fn main() {
-    // Static lifetime
+    // A string with a static lifetime, meaning it will be available for the entire duration of the program
     let s: &'static str = "I have a static lifetime.";
+
+    // Two string variables
     let string1: String = String::from("abcd");
     let string2: String = String::from("xyz");
 
+    // Call the longest function to determine the longest string
     let result = longest(string1.as_str(), string2.as_str());
+
+    // Print the longest string
     println!("The longest string is: {}", result);
+
+    // Print the static lifetime string
     println!("Static lifetime: {}", s);
 }
 
-// Dangling reference: a reference pointing to data that has been freed
-// fn dangling_reference() {
-//     let r: &i32;
-//     {
-//         let x: i32 = 0;
-//         r = &x;
-//         Scope ends and the x is deallocated from the memory
-//     }
-//     but r is now pointing to a dangling reference, i.e.: pointing to a memory that is no longer valid
-//     println!("R: {}", r);
-// }
-
+// Function to determine the longest of two strings
+// The function takes two string references and returns a reference to the longest string
+// The 'a lifetime annotation indicates that the returned reference will live at least as long as the shortest of the two input lifetimes
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -29,20 +28,20 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     }
 }
 
-// Implicit lifetime elision rules:
-// 1. Each parameter that is a reference gets its own lifetime parameter
-// 2. If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters
-// 3. If there are multiple input lifetime parameters, but one of them is &self or &mut self, the lifetime of self is assigned to all output lifetime parameters
-
-// fn first_word(s: &str) -> &str {}
+// Function to find the first word in a string
+// The function takes a string reference and returns a reference to the first word in the string
+// The 'a lifetime annotation indicates that the returned reference will live at least as long as the input string
 fn first_word<'a>(s: &'a str) -> &'a str {
+    // Convert the string to bytes for processing
     let bytes: &[u8] = s.as_bytes();
 
+    // Iterate over the bytes, returning a reference to the first word when a space is encountered
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
             return &s[..i];
         }
     }
 
+    // If no spaces are found, the entire string is one word, so return a reference to the whole string
     &s[..]
 }
