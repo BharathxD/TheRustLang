@@ -52,4 +52,9 @@ mod tests {
         // assert!(Something, "add(1, 2) should be 3", add(1, 2));
         assert_eq!(add(1, 2), 3);
     }
+
+    #[should_panic(expected = "assertion failed")]
+    fn should_panic() {
+        assert!(false, "assertion failed");
+    }
 }
